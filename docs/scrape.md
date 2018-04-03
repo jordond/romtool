@@ -1,18 +1,18 @@
-# romtools - Scrape Archive.org
+# romtool - Scrape Archive.org
 
 This command will allow you to scrape [archive.org](http://archive.org) for all links within an identifier, including the locked files.
 
 Recently a lot of Archive.org collections have been locked down. So that you can no longer click the link to download a file. This command will find those links then generate a proper URL for you to use. I recommend importing them into JDownloader2.
 
-![romtools scraper demo][demo]
+![romtool scraper demo][demo]
 
 [demo]: https://github.com/jordond/romtools/raw/master/assets/demo-scraper.gif "Scraper Demo"
 
 ## Usage
 
 ```
-$ romtools scrape-archive -h
-romtools scrape-archive [options]
+$ romtool scrape-archive -h
+romtool scrape-archive [options]
 
 Scrape locked links from archive.org
 

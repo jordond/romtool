@@ -1,22 +1,22 @@
-# romtools - CLI tool for managing your PSX ROMs
+# romtool - CLI tool for managing your PSX ROMs
 
 A small collection of tools to help manage your PSX ROMS for use with emulators and RetroPie.
 
 NOTE: I have only tested this on Linux and Mac, I do not have a Windows machine to test on. But in theory it should work.
 
-![romtools demo][demo]
+![romtool demo][demo]
 
 ## Commands:
 
-* `romtools merge`
+* `romtool merge`
   * Merge multi-track `.bin`'s into a single `.cue`/`.bin` pair
     * Move originals to subfolder
     * Delete the source files
     * Archive the source files using 7zip
-* `romtools playlist`
+* `romtool playlist`
   * Create a `.m3u` playlist for multi-disc games
   * Revert playlist creation
-* `romtools scrape-archive`
+* `romtool scrape-archive`
   * Scrape `archive.org` for locked links on romsets
 
 ### TODO
@@ -37,13 +37,13 @@ So this CLI tool comes with commands to find and merge all multi-track games int
 You will also need the following requirments:
 
 1.  Node v8.11.1 or higher
-2.  Python - If you use `romtools merge`
-3.  7zip - If you use the `--archive` flag with `romtools merge`
+2.  Python - If you use `romtool merge`
+3.  7zip - If you use the `--archive` flag with `romtool merge`
 
 Install via `npm`
 
 ```bash
-npm install -g romtools
+npm install -g romtool
 
 # Dependencies
 
@@ -56,30 +56,30 @@ brew install p7zip
 
 ## Usage:
 
-Run `romtools -h` for the CLI usage.
+Run `romtool -h` for the CLI usage.
 
 ```
-$ romtools -h
-romtools <command>
+$ romtool -h
+romtool <command>
 
 Commands:
-  romtools merge [options] [--path]     Merge multi-track roms into a single
+  romtool merge [options] [--path]     Merge multi-track roms into a single
                                         '.bin' + '.cue'
-  romtools playlist [options] [--path]  Create a '.m3u' playlist for multi-disc
+  romtool playlist [options] [--path]  Create a '.m3u' playlist for multi-disc
                                         games
-  romtools find-discs [options]         Find all folders with multiple discs
-  romtools find-tracks [options]        Find all folders with games that have
+  romtool find-discs [options]         Find all folders with multiple discs
+  romtool find-tracks [options]        Find all folders with games that have
                                         multiple tracks
-  romtools scrape-archive [options]     Scrape locked links from archive.org
+  romtool scrape-archive [options]     Scrape locked links from archive.org
 
 Options:
   --version   Show version number                                      [boolean]
   --help, -h  Show help                                                [boolean]
 ```
 
-For more information on a specific command run `romtools <command> -h`
+For more information on a specific command run `romtool <command> -h`
 
-ex: `romtools merge -h`
+ex: `romtool merge -h`
 
 Or read the following pages:
 
@@ -92,8 +92,8 @@ Or read the following pages:
 Feel free to fork and create a pull request! All contributions are welcome! Just clone the repo, install dependencies and start coding!
 
 ```bash
-git clone git@github.com:jordond/romtools
-cd romtools
+git clone git@github.com:jordond/romtool
+cd romtool
 yarn
 
 # Optionally run link so you can test the CLI
@@ -109,7 +109,7 @@ For merging the multi-track files, this tool relies heavily on a python script c
 ## License
 
 ```
-romtools, a CLI tool for managing PSX roms.
+romtool, a CLI tool for managing PSX roms.
 Copyright (C) 2018  Jordon de Hoog
 
 This program is free software: you can redistribute it and/or modify

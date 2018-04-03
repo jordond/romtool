@@ -1,9 +1,9 @@
 {
-  "name": "romtools",
+  "name": "romtool",
   "version": "1.0.0",
   "main": "index.js",
   "bin": {
-    "romtools": "bin/index.js"
+    "romtool": "bin/index.js"
   },
   "engines": {
     "node": ">=8.11.1"
