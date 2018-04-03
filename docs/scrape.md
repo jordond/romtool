@@ -6,7 +6,7 @@ Recently a lot of Archive.org collections have been locked down. So that you can
 
 ![romtool scraper demo][demo]
 
-[demo]: https://github.com/jordond/romtools/raw/master/assets/demo-scraper.gif "Scraper Demo"
+[demo]: https://github.com/jordond/romtool/raw/master/assets/demo-scraper.gif "Scraper Demo"
 
 ## Usage
 
@@ -38,7 +38,7 @@ By default it will save the results to a text file in the directory you run the 
   * The identifier for archive.org
     * ex: `https://archive.org/details/ImAIdentifier` would be `--identifier ImAIdentifier`
   * You can pass multiple identifiers to scrape them all
-    * ex: `romtools scrape-archive -i IdentBlue -i IdentRed`
+    * ex: `romtool scrape-archive -i IdentBlue -i IdentRed`
 * `--multi` - Boolean
   * If enabled then the scraper will attempt to find links that are apart of a multi-part upload
     * ex: `-i IdentBlue` would try to find `IdentBluePart2`, `IdentBluePart3`
