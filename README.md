@@ -126,4 +126,4 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ```
 
-[demo]: https://github.com/jordond/romtools/raw/master/assets/demo.gif "CLI Demo"
+[demo]: https://github.com/jordond/romtools/raw/master/assets/demo-usage.gif "CLI Demo"
