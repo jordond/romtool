@@ -85,7 +85,7 @@ Or read the following pages:
 
 * [merge](docs/merge.md)
 * [playlist](docs/playlist.md)
-* [scrape-archive](docs/scraper.md)
+* [scrape-archive](docs/scrape.md)
 
 ## Contributing
 
