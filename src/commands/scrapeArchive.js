@@ -57,8 +57,6 @@ module.exports = {
       })
 };
 
-// RedumpSonyPS2NTSCU
-
 const ARCHIVE_BASE_URL = "https://archive.org/download/";
 
 let spinner;
