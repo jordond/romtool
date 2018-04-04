@@ -1,6 +1,6 @@
 {
   "name": "romtool",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Collection of tools for managing your PSX rom collection",
   "author": {
     "name": "Jordon de Hoog",
@@ -62,6 +62,10 @@
     ]
   },
   "keywords": [
-    "roms", "psx", "retropie", "romtool", "cli"
+    "roms",
+    "psx",
+    "retropie",
+    "romtool",
+    "cli"
   ]
 }
