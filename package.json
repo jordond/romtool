@@ -1,6 +1,16 @@
 {
   "name": "romtool",
   "version": "1.0.0",
+  "description": "Collection of tools for managing your PSX rom collection",
+  "author": {
+    "name": "Jordon de Hoog",
+    "email": "jordon.dehoog@gmail.com",
+    "url": "https://github.com/jordond"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jordond/romtool"
+  },
   "main": "index.js",
   "bin": {
     "romtool": "bin/index.js"
@@ -11,7 +21,11 @@
   "scripts": {
     "precommit": "lint-staged"
   },
-  "license": "MIT",
+  "homepage": "https://github.com/jordond/romtool",
+  "bugs": {
+    "url": "https://github.com/jordond/romtool/issues"
+  },
+  "license": "GPL-3.0",
   "dependencies": {
     "bluebird": "^3.5.1",
     "chalk": "^2.3.2",
@@ -46,5 +60,8 @@
       "eslint --fix",
       "git add"
     ]
-  }
+  },
+  "keywords": [
+    "roms", "psx", "retropie", "romtool", "cli"
+  ]
 }
