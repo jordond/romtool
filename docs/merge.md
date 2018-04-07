@@ -1,1 +1,3 @@
-# romtool - Merge
+# romtool - merge multi-track PSX roms
+
+TODO

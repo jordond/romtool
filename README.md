@@ -19,6 +19,12 @@ NOTE: I have only tested this on Linux and Mac, I do not have a Windows machine 
 * `romtool scrape-archive`
   * Scrape `archive.org` for locked links on romsets
 
+See more:
+
+* [merge](https://github.com/jordond/romtool/blob/master/docs/merge.md)
+* [playlist](https://github.com/jordond/romtool/blob/master/docs/playlist.md)
+* [scrape-archive](https://github.com/jordond/romtool/blob/master/docs/scrape.md)
+
 ### TODO
 
 * Revert merge if source files were archived or moved
@@ -80,12 +86,6 @@ Options:
 For more information on a specific command run `romtool <command> -h`
 
 ex: `romtool merge -h`
-
-Or read the following pages:
-
-* [merge](docs/merge.md)
-* [playlist](docs/playlist.md)
-* [scrape-archive](docs/scrape.md)
 
 ## Contributing
 
