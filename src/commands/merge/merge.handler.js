@@ -1,6 +1,7 @@
 const c = require("chalk");
 const Promise = require("bluebird");
 const ora = require("ora");
+const { prompt } = require("inquirer");
 const commandExists = require("command-exists");
 const { resolve, basename, dirname, join } = require("path");
 const {
@@ -32,6 +33,9 @@ const mergeBin = require("./binMerge");
 const ORIGINAL_FOLDER = `${getCLIName()}-original`;
 const REGEX_MERGED_FILES = /.*\.merged\.(cue|bin)/i;
 const REGEX_MOVED_FOLDER = new RegExp(escapeRegExp(ORIGINAL_FOLDER), "i");
+const ACTION_ARCHIVE = "ARCHIVE";
+const ACTION_CLEAN = "CLEAN";
+const ACTION_MOVE = "MOVE";
 
 let log;
 let spinner;
@@ -75,6 +79,9 @@ async function handler({
   log.verbose(`checking ${folderCount} folders`);
   log.verbose(
     `using the search pattern -> ${regex}, excluding -> ${excludeReg || "none"}`
+  );
+  log.verbose(
+    `options: archive -> ${archive}, confirm -> ${confirm}, clean -> ${clean}`
   );
   recursive &&
     log.verbose("recursive mode is enabled, it's turtles all the way down!");
@@ -188,7 +195,28 @@ async function handler({
       new RegExp(escapeRegExp(basename(cue, ".cue")) + /.*\.bin/.source, "i")
   };
 
-  if (archive) {
+  let actionToDo;
+  if (confirm && !archive && !clean) {
+    const choices = [
+      { value: ACTION_MOVE, name: "Move them into a subfolder" },
+      { value: ACTION_ARCHIVE, name: "Use 7zip to archive them" },
+      {
+        value: ACTION_CLEAN,
+        name: "Permanently delete them - CANNOT BE UNDONE"
+      }
+    ];
+
+    const { action } = await prompt({
+      type: "list",
+      name: "action",
+      message: "What would you like to do with the original files?",
+      choices
+    });
+
+    actionToDo = action;
+  }
+
+  if (archive || actionToDo === ACTION_ARCHIVE) {
     log.info(c`{magenta archiving} the original files`);
     spinner.start("please wait...");
 
@@ -203,7 +231,7 @@ async function handler({
     spinnerMessage(
       c`archived {green ${archiveResults.filter(x => x.success).length}} games`
     );
-  } else if (clean) {
+  } else if (clean || actionToDo === ACTION_CLEAN) {
     log.info(c`{red deleting} the original files`);
     log.info(c`this action {red CANNOT} be undone`);
     log.info(c`use the '{cyan --archive} flag to 7zip the originals`);
