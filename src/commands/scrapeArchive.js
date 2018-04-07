@@ -50,11 +50,6 @@ module.exports = {
         type: "boolean",
         desc: "Print the URL's to the console"
       })
-      .options("verbose", {
-        alias: "v",
-        type: "boolean",
-        desc: "Display all the things"
-      })
 };
 
 const ARCHIVE_BASE_URL = "https://archive.org/download/";

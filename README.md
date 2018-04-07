@@ -79,8 +79,9 @@ Commands:
   romtool scrape-archive [options]     Scrape locked links from archive.org
 
 Options:
-  --version   Show version number                                      [boolean]
-  --help, -h  Show help                                                [boolean]
+  --version     Show version number                                   [boolean]
+  --verbose, -v Enable extra logging                                  [boolean]
+  --help, -h    Show help                                             [boolean]
 ```
 
 For more information on a specific command run `romtool <command> -h`

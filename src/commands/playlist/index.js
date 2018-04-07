@@ -30,9 +30,4 @@ module.exports = {
         type: "boolean",
         desc: "Select which files to use"
       })
-      .options("verbose", {
-        alias: ["v", "isVerbose"],
-        type: "boolean",
-        desc: "Display all the things"
-      })
 };

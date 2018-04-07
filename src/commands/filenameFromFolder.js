@@ -42,11 +42,6 @@ module.exports = {
         type: "boolean",
         desc: "Write ID file alongside rom"
       })
-      .options("verbose", {
-        alias: ["v", "isVerbose"],
-        type: "boolean",
-        desc: "Display all the things"
-      })
 };
 
 async function handler({

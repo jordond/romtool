@@ -27,7 +27,6 @@ Options:
                                '--no-out'               [string] [default: "./"]
   --print                      Print the URL's to the console
                                                       [boolean] [default: false]
-  --verbose, -v                Display all the things                  [boolean]
 ```
 
 ## Notes

@@ -42,7 +42,6 @@ Options:
                               rename files to original
   --exclude, -x               Pattern to exclude files
   --confirm                   Select which files to use[boolean] [default: true]
-  --verbose, -v, --isVerbose  Display all the things                   [boolean]
 ```
 
 ## Screenshot

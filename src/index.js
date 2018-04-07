@@ -34,6 +34,11 @@ commands
   .map(addMiddleware)
   .reduce((yargs, cmd) => yargs.command(cmd), require("yargs"))
   .demandCommand(1, "You must enter a command")
+  .option("verbose", {
+    alias: "v",
+    type: "boolean",
+    desc: "Enable extra logging"
+  })
   .help()
   .alias("help", "h")
   .strict().argv;

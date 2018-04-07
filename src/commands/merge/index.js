@@ -55,11 +55,6 @@ module.exports = {
         type: "boolean",
         desc: "Delete the source files after completion. * CANNOT BE UNDONE"
       })
-      .options("verbose", {
-        alias: ["v", "isVerbose"],
-        type: "boolean",
-        desc: "Display all the things"
-      })
       .example(
         "$0 merge",
         "Merge all multi-track files in the current directory."
