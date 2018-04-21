@@ -171,9 +171,7 @@ async function handler({
   const mergeResults = await mergeCueFiles(cuesToUse, numWorkers);
   const mergedCount = mergeResults.filter(x => x.success).length;
   if (mergedCount === cuesToUse.length) {
-    spinner.succeed(
-      c`successfully merged all {green ${mergedCount}} cue files`
-    );
+    spinner.succeed(c`successfully merged {green ${mergedCount}} cue files`);
   } else if (mergedCount === 0) {
     spinner.fail(c`{red none} of the cues we're able to be merged...`);
     log.info(

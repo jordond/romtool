@@ -48,7 +48,7 @@ $ tree /media/roms/psx/Twisted\ Metal\ (USA)
 
 ## Usage
 
-If your computer supports it, you process the files quicker by changing the following flags:
+If your computer is powerful enough, you process the files quicker by changing the following flags:
 
 * `--workers [number]`
   * The number of files to merge at a time
@@ -135,7 +135,7 @@ total 667536
 999B | Twisted Metal (USA).cue
 
 $ romtool merge --no-confirm
-✔ successfully merged all 1 cue files
+✔ successfully merged 1 cue files
 
 $ tree
 .

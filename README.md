@@ -16,14 +16,11 @@ NOTE: I have only tested this on Linux and Mac, I do not have a Windows machine 
 * `romtool playlist`
   * Create a `.m3u` playlist for multi-disc games
   * Revert playlist creation
-* `romtool scrape-archive`
-  * Scrape `archive.org` for locked links on romsets
 
 See more:
 
 * [merge](https://github.com/jordond/romtool/blob/master/docs/merge.md)
 * [playlist](https://github.com/jordond/romtool/blob/master/docs/playlist.md)
-* [scrape-archive](https://github.com/jordond/romtool/blob/master/docs/scrape.md)
 
 ### TODO
 
