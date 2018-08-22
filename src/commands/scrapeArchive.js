@@ -34,6 +34,10 @@ module.exports = {
         default: true,
         desc: "Check to see if there is multiple parts available"
       })
+      .options("all", {
+        type: "boolean",
+        desc: "Grab all the links, not just the dead ones"
+      })
       .options("extension", {
         alias: ["e", "ext"],
         type: "string || string[]",
@@ -69,6 +73,7 @@ function spinnerMessage(
 async function handler({
   identifier,
   multi,
+  all,
   extension,
   output,
   print,
@@ -102,6 +107,7 @@ async function handler({
 
   const results = await scrapeIndentifiers(identifiers, {
     searchReg,
+    all,
     multi,
     extension
   });
@@ -184,7 +190,7 @@ function getMultiPartUrls(identifier) {
 
 async function scrapeIndentifiers(
   identifiers,
-  { multi, extension, searchReg }
+  { multi, all, extension, searchReg }
 ) {
   return Promise.map(identifiers, async identifier => {
     spinnerMessage(c`{blue ${identifier}} - starting...`);
@@ -229,9 +235,10 @@ async function scrapeIndentifiers(
         try {
           spinnerMessage(c`scraping {cyan ${it}}...`);
           const result = await scrape(it, {
-            names: xray(".directory-listing-table__restricted-file", [
-              "td:first-child"
-            ])
+            names: xray(
+              `.directory-listing-table${all ? "" : "__restricted-file"}`,
+              ["td:first-child"]
+            )
           });
 
           const resultUrls = result.names
