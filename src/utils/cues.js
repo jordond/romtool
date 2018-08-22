@@ -1,6 +1,6 @@
 const c = require("chalk");
 const Promise = require("bluebird");
-const { basename, dirname } = require("path");
+const { basename } = require("path");
 const { prompt } = require("inquirer");
 
 const { regex: REGEX_TRACKS } = require("../commands/find/findMultiTrack");
