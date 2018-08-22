@@ -1,4 +1,5 @@
-module.exports = yargs => yargs
+module.exports = yargs =>
+  yargs
     .options("path", {
       alias: "p",
       type: "string",

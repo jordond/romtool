@@ -20,6 +20,8 @@ Options:
   --version                    Show version number                     [boolean]
   --help, -h                   Show help                               [boolean]
   --identifier, -i             Archive.org identifier to scrape [required]
+  --all                        Grab all the links, not just the dead ones
+                                                                       [boolean]
   --multi, -m, --part          Check to see if there is multiple parts available
                                                        [boolean] [default: true]
   --extension, -e, --ext       Extension of files to list
@@ -43,6 +45,8 @@ By default it will save the results to a text file in the directory you run the 
     * ex: `-i IdentBlue` would try to find `IdentBluePart2`, `IdentBluePart3`
     * This is the naming scheme for some of the ReDump posts
   * Disable by passing `--no-multi`
+* `--all` - Boolean
+  * Scrape all the links from an identifier, not just the disabled ones.
 
 ## TODO
 
