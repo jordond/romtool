@@ -34,6 +34,8 @@ function spinnerMessage(
   spinner.start(c`${startMsg}`);
 }
 
+const REGEX_DISC_CUE = new RegExp(`${REGEX_DISC.source}.*\\.cue`);
+
 async function handler({ path, exclude, confirm, verbose, revert }) {
   isVerbose = verbose;
   log = logFactory(verbose);
@@ -41,8 +43,7 @@ async function handler({ path, exclude, confirm, verbose, revert }) {
 
   const startingPath = resolve(path);
 
-  const discCueRegex = new RegExp(`${REGEX_DISC.source}.*\\.cue`);
-  const searchRegex = revert ? /\.m3u|\.CD[0-9]/i : discCueRegex;
+  const searchRegex = revert ? /\.m3u|\.CD[0-9]/i : REGEX_DISC_CUE;
   const userExcludeReg = exclude
     ? new RegExp(escapeRegExp(exclude), "i")
     : undefined;
@@ -209,9 +210,7 @@ async function filterValidFolders(folders) {
       spinnerMessage(
         c`{magenta ${folder}} => \n\t{cyan ${files.join("\n\t")}}`
       );
-    const discCues = files.filter(file =>
-      new RegExp(`${REGEX_DISC.source}\\.cue`).test(file)
-    );
+    const discCues = files.filter(file => REGEX_DISC_CUE.test(file));
     const discBins = discCues.filter(cue =>
       files.find(file => file === cue.replace(".cue", ".bin"))
     );
